@@ -1,19 +1,19 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Pages/Footer/Footer";
+import Home from "./components/Pages/HomePage/Home";
 
 function App() {
-
-  const APP_ID = 'ca029a0e';
-  const APP_KEY = 'f9a9a76bd20b24e69fa8cf3029856a20'
-
-  const exampleReq ="https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}"
-
   return (
-    <div className="App">
-      <h1>
-        HEllo
-      </h1>
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route path="/" exact component={Home} />
+      </Switch>
+      <Footer />
+    </Router>
   );
 }
 
